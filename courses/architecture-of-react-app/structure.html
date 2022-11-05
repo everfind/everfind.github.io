@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#5397d2"><script>
+      var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e772d8d7735057378a672ae311e9bf20";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+    </script><title>项目结构设计 | 众里千寻</title><meta name="description" content="良好的目录结构设计可以在保证代码功能模块清晰的同时提供很好的扩展性，给项目带来长久的生命力。"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="preload" href="/assets/js/runtime~app.fa50ff6a.js" as="script"><link rel="preload" href="/assets/css/styles.e0095a00.css" as="style"><link rel="preload" href="/assets/js/3767.b5b9e7ce.js" as="script"><link rel="preload" href="/assets/js/app.8de2a662.js" as="script">
+    <link rel="stylesheet" href="/assets/css/styles.e0095a00.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><header class="navbar"><div class="toggle-sidebar-button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><span><a href="/" class=""><img class="logo" src="/hero-c.png" alt="众里千寻"><span class="site-name can-hide">众里千寻</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><a href="/courses/" class="nav-link router-link-active" aria-label="学习笔记"><!--[--><!--]--> 学习笔记 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/solutions/" class="nav-link" aria-label="解决方案"><!--[--><!--]--> 解决方案 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/tools/" class="nav-link" aria-label="开发利器"><!--[--><!--]--> 开发利器 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/code-reading/" class="nav-link" aria-label="源码解读"><!--[--><!--]--> 源码解读 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/posts/" class="nav-link" aria-label="最新消息"><!--[--><!--]--> 最新消息 <!--[--><!--]--></a></div><div class="navbar-links-item"><a class="nav-link external" href="https://github.com/everfind" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><a href="/courses/" class="nav-link router-link-active" aria-label="学习笔记"><!--[--><!--]--> 学习笔记 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/solutions/" class="nav-link" aria-label="解决方案"><!--[--><!--]--> 解决方案 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/tools/" class="nav-link" aria-label="开发利器"><!--[--><!--]--> 开发利器 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/code-reading/" class="nav-link" aria-label="源码解读"><!--[--><!--]--> 源码解读 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/posts/" class="nav-link" aria-label="最新消息"><!--[--><!--]--> 最新消息 <!--[--><!--]--></a></div><div class="navbar-links-item"><a class="nav-link external" href="https://github.com/everfind" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--[--><p class="sidebar-heading sidebar-item">项目结构设计</p><ul class=""><li><!--[--><a aria-current="page" href="/courses/architecture-of-react-app/structure.html#项目目录结构" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="项目目录结构"><!--[--><!--]--> 项目目录结构 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/courses/architecture-of-react-app/structure.html#功能模块目录结构" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="功能模块目录结构"><!--[--><!--]--> 功能模块目录结构 <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><p>良好的目录结构设计可以在保证代码功能模块清晰的同时提供很好的扩展性，给项目带来长久的生命力。</p><h2 id="项目目录结构" tabindex="-1"><a class="header-anchor" href="#项目目录结构" aria-hidden="true">#</a> 项目目录结构</h2><p>通常来说，整个项目的代码都在 <code>src</code> 目录下。我们建议 <code>src</code> 目录组织如下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>src
+|
++-- assets          # 图片字体等静态资源
+|
++-- components      # 全应用共享的公共组件
+|
++-- config          # 全局配置、环境变量等。在这里导出，应用中其他代码通过导入获取。
+|
++-- context         # 所有的全局 context
+|
++-- features        # 功能模块目录，也可以叫 pages
+|
++-- hooks           # 全应用共享的公共 hooks
+|
++-- lib             # 导出预处理过的公共库，比如添加了 interceptor 的 axios 实例。
+|
++-- routes          # 路由配置
+|
++-- test            # 测试代码
+|
++-- types           # 整个应用共用的 typescript 类型定义
+|
++-- utils           # 整个应用共享的 utils 函数
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="功能模块目录结构" tabindex="-1"><a class="header-anchor" href="#功能模块目录结构" aria-hidden="true">#</a> 功能模块目录结构</h2><p>为了保证能以最简单、最具可维护性的方式扩展应用，我们应该尽可能将代码约束在 <code>features</code> 目录中。每个 <code>feature</code> 目录中应该仅仅包含这个功能特有的代码，避免功能特有的代码与其他公共代码混合在一起。维护一个功能模块的代码比维护一个偏平的大目录更加简单。</p><p>一个 <code>feature</code> 目录的结构如下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>src/features/awesome-feature
+|
++-- api         # 导出与这个功能相关的所有 API 请求
+|
++-- components  # 这个功能内的公共组件，其他地方不能使用
+|
++-- hooks       # 这个功能内使用的 hooks，其他地方不能使用
+|
++-- routes      # 功能内的路由配置
+|
++-- types       # 功能内的 typescript 类型定义
+|
++-- utils       # 功能内使用的 utils 函数
+|
++-- index.ts    # 功能入口点，同时也可以在这里导出任何可以被其他地方使用的代码
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><code>feature</code> 目录下的 <code>index.ts</code> 应该导出所有这个功能模块可以对外提供的 API。</p><p>比如我们可以在其他模块这样导入 <code>awesome-feature</code> 内的 <code>AwesomeComponent</code>，</p><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>AwesomeComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@/features/awesome-feature&quot;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>但是不能像下面这样导入 <code>AwesomeComponent</code>。</p><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>AwesomeComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@/features/awesome-feature/components/AwesomeComponent&quot;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>ESLint 提供了一个配置可以帮助我们禁止上面这种直接导入方式。配置如下：</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&#39;no-restricted-imports&#39;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">&#39;error&#39;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+            patterns<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&#39;@/features/*/*&#39;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token operator">...</span>rest <span class="token keyword">of</span> the configuration
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div style="display:flex;align-items:center;justify-content:center;"><p style="text-align:center;margin-top:10px;color:#999;"><img src="/qrcode-c.jpg" style="width:200px;height:200px;display:block;margin:10px auto;opacity:0.8;">关注微信公众号，获取最新推送~</p><p style="text-align:center;margin-top:10px;color:#999;"><img src="/card-c.jpeg" style="width:200px;height:200px;display:block;margin:10px auto;opacity:0.8;">加微信，深入交流~</p></div><!--]--></div><footer class="page-meta"><!----><!----><!----></footer><!----><!--[--><!--]--></main></div><!----><!----><!--]--></div>
+    <script src="/assets/js/runtime~app.fa50ff6a.js" defer></script><script src="/assets/js/3767.b5b9e7ce.js" defer></script><script src="/assets/js/app.8de2a662.js" defer></script>
+  </body>
+</html>
